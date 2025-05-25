@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVScanner AI</title>
+
+  <!-- My Main CSS -->
+  <link rel="stylesheet" href="stylescvscanner.css" />
+
+  <!--My Upadated Font Awsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.0 with Integrity -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        integrity="sha512-NVzH4yLvfPO3V3J1bbPfSKrAMTxv6MkTr9aL46kxpmAsQjbmLBIFVqppKJgUIfBv0wQv9yyA9Wpx7PPfsxjbMQ==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+
+  <!-- Optional Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+<div class="navbar">
+    <div class="navbar-left">
+      <div class="navbar-logo">CVScanner AI</div>
+
+      <a href="file:///C:/path/to/products.html" class="nav-link">Products</a>
+      <a href="file:///D:/other/path/ats_resume.html" class="nav-link">ATS Resume</a>
+      <a href="file:///E:/another/path/cover_letter.html" class="nav-link">Cover Letter</a>
+      <a href="file:///C:/different/path/pricing.html" class="nav-link">Pricing</a>
+      <a href="file:///F:/resources/location/resources.html" class="nav-link">Resources</a>
+      <a href="file:///C:/orgs/location/organizations.html" class="nav-link">Organizations</a>
+      <a href="file:///C:/dashboard/location/dashboard.html" class="nav-link">Dashboard</a>
+      <a href="file:///C:/Users/fn0034/OneDrive%20-%20%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A9%E3%83%A0%E6%83%85%E5%A0%B1%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%83%BC%E5%B0%82%E9%96%80%E5%AD%A6%E6%A0%A1/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/Project%20Niigata/AI%20based%20resumer/user%20page.html" class="nav-link">Account</a>
+    </div>
+
+    <div class="navbar-right">
+      <button class="button login">Log In</button>
+      <button class="button signup">Sign Up</button>
+    </div>
+  </div>
+
+
+ <div class="hero">
+  <div class="hero-text">
+    <canvas id="ai-network-text"></canvas>
+    <div class="text-content">
+      <h1>Meet CVScanner — Your AI Career Wingman</h1>
+      <p>Looking for a smarter way to get hired? CVscanner uses cutting-edge AI to read your resume like a recruiter, 
+         compare it with real job descriptions, and give you instant tips to stand out. 
+         It's like having a personal hiring coach—on demand.</p>
+      <button class="button">Let the AI Boost My Resume</button>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="c:\Users\fn0034\OneDrive - フォーラム情報アカデミー専門学校\ドキュメント\Project Niigata\AI based resumer\images\Flux_Dev_A_friendly_robot_and_a_.png" alt="Resume Scan Example">
+  </div>
+</div>
+
+
+<div class="cvscanner-container">
+  <div class="cvscanner-text">
+    <p class="cvscanner-lead">
+      Tired of sending out resumes and hearing nothing back? You're not alone. Our intelligent CV scanner and resume builder use AI and real-time feedback to help your application rise to the top of the pile — whether you're a job seeker, freelancer, or business owner.
+    </p>
+    <p class="cvscanner-highlight">
+      <strong>Boost your chances of landing an interview with our advanced scanning, optimization, and AI writing tools — all in one platform.</strong>
+    </p>
+
+    <h3 class="cvscanner-features-heading">POWERFUL TOOLS THAT WORK FOR YOU:</h3>
+
+    <div class="cvscanner-feature active">
+      <h4>Smart CV Analyzer</h4>
+      <p>Instantly scan your CV for keyword matches, formatting errors, and alignment with the job role — powered by AI and real ATS data.</p>
+    </div>
+
+    <div class="cvscanner-feature">
+      <h4>AI Resume Writer</h4>
+      <p>Generate compelling, tailored resumes in seconds using natural language AI — just enter your role, skills, and career goals.</p>
+    </div>
+
+    <div class="cvscanner-feature">
+      <h4>Visual Resume Templates</h4>
+      <p>Choose from a gallery of professional, modern templates designed for clarity, elegance, and ATS compatibility.</p>
+    </div>
+
+    <div class="cvscanner-feature">
+      <h4>CV Score & Feedback</h4>
+      <p>Get an instant score and actionable tips to improve layout, structure, and content for higher recruiter engagement.</p>
+    </div>
+
+    <div class="cvscanner-feature">
+      <h4>LinkedIn Sync & Optimization</h4>
+      <p>Connect your LinkedIn profile and receive real-time suggestions to match trending keywords and recruiter expectations.</p>
+    </div>
+  </div>
+
+  <div class="cvscanner-image">
+    <img src="c:\Users\fn0034\Downloads\Untitled-2-removebg-preview.png" alt="ATS Illustration" />
+  </div>
+</div>
+
+<div class="resume-scanner">
+  <div class="nero">
+    <h1>A free resume scanner that generates a bespoke ATS compatibility report based on your resume</h1>
+    <p>Upload your resume and you’ll get a personalized report with an actionable tasklist. Here’s the run-down of what you get.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">&#x1F3C1;</div>
+      <h2>Comprehensive ATS parsability check</h2>
+      <p>We’ll review your resume, looking for indicators of ATS parsability, like the presence of relevant skills and keywords, your contact details, file type, and length. We’ll then provide suggestions to enhance your resume's ATS compatibility.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">&#9776;</div>
+      <h2>Resume sections check</h2>
+      <p>Our Resume Scanner assesses the completeness and relevance of your resume sections based on your job title and industry, recommending improvements where necessary.</p>
+    </div>
+
+    <div class="feature">
+      <div class="icon">&#x1F511;</div>
+      <h2>Skills section check</h2>
+      <p>The skills section is crucial for both human and ATS reviewers. Our Resume Scanner will evaluate your skills section, ensuring it's tailored to the job requirements and packed with relevant keywords.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Company Logos Section -->
+<div class="company-logos">
+  <p class="logos-heading">Our users have landed jobs at top companies in all Countries</p>
+  <div class="logos-wrapper"></div>
+</div>
+
+
+
+<!-- Resume Optimization Section -->
+<div class="resume-optimization">
+  <div class="illustration">
+    <img src="images/Untitled_design__13_-removebg-preview.png" alt="Resume Optimization Graphic">
+  </div>
+  <div class="content">
+    <h4 class="section-title">Resume Optimization</h4>
+    <h2>Discover What Your Resume Is Missing</h2>
+    <p>
+      CVScanner uses advanced AI to analyze your resume against job descriptions—highlighting missing skills, keywords, and opportunities for improvement. Get personalized suggestions to enhance your resume and increase your chances of landing interviews.
+    </p>
+  </div>
+</div>
+
+<!-- Smart Resume Creator Section -->
+<div class="resume-optimization">
+  <div class="content">
+    <h4 class="section-title">Smart Resume Creator</h4>
+    <h2>Turn Your Words into a Winning Resume</h2>
+    <p>
+      With <strong>CVScanner</strong>'s text-to-resume generator, building your CV is as easy as typing.
+      Enter your information, and our AI will automatically format and structure it into a polished, ATS-compliant resume — ready to download.
+    </p>
+    <ul>
+      <li>✍️ Just type your details</li>
+      <li>⚙️ AI formats your resume professionally</li>
+      <li>📄 Export as PDF with one click</li>
+    </ul>
+    <button class="button">Try Text to Resume</button>
+  </div>
+
+  <div class="illustration">
+    <img src="images/Untitled_design__14_-removebg-preview.png" alt="Text to Resume Illustration">
+  </div>
+</div>
+
+
+<!-- Testimonials Section -->
+<section class="testimonial-section">
+  <div class="container">
+
+    <!-- First Row of Testimonials -->
+    <div class="row">
+
+      <!-- Testimonial 1 -->
+      <div class="col-md-4 margin-btm-20">
+        <div class="quote dark">
+          <blockquote>
+            <p>CVScanner helped me land three interviews in a week! The feedback was spot-on and easy to follow.</p>
+          </blockquote>
+        </div>
+        <div class="quote-footer text-right">
+          <div class="quote-author-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+          </div>
+          <h4>Priya Menon</h4>
+          <p><strong>Software Developer</strong></p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-4 margin-btm-20">
+        <div class="quote green">
+          <blockquote>
+            <p>I was amazed how quickly CVScanner analyzed my resume and gave AI-powered suggestions to improve it.</p>
+          </blockquote>
+        </div>
+        <div class="quote-footer text-right">
+          <div class="quote-author-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+          </div>
+          <h4>Daniel Cruz</h4>
+          <p><strong>Marketing Specialist</strong></p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4 margin-btm-20">
+        <div class="quote dark">
+          <blockquote>
+            <p>Thanks to CVScanner, I realized what recruiters were missing in my CV. I highly recommend it to job seekers!</p>
+          </blockquote>
+        </div>
+        <div class="quote-footer text-right">
+          <div class="quote-author-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+          </div>
+          <h4>Keiko Tanaka</h4>
+          <p><strong>HR Executive</strong></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Second Row of Testimonials -->
+    <div class="row">
+
+      <!-- Testimonial 4 -->
+      <div class="col-md-4 margin-btm-20">
+        <div class="quote dark">
+          <blockquote>
+            <p>Within 48 hours of updating my CV based on CVScanner's advice, I got shortlisted by a multinational company.</p>
+          </blockquote>
+        </div>
+        <div class="quote-footer text-right">
+          <div class="quote-author-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+          </div>
+          <h4>Ahmed Farooq</h4>
+          <p><strong>Data Analyst</strong></p>
+        </div>
+      </div>
+
+      <!-- Testimonial 5 -->
+      <div class="col-md-8 margin-btm-20">
+        <div class="quote green">
+          <blockquote>
+            <p>CVScanner isn’t just a scanner – it’s like having a personal career coach. The tips and insights were incredibly helpful.</p>
+          </blockquote>
+        </div>
+        <div class="quote-footer text-right">
+          <div class="quote-author-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="">
+          </div>
+          <h4>Samantha Lee</h4>
+          <p><strong>UX Designer</strong></p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Our Partner Companies Section -->
+<section class="company-logos">
+  <div class="company-logos-header">
+    <h2>Our Partnered Companies</h2>
+    <p>Join forces with innovative and global-minded businesses paving the way for your future.</p>
+  </div>
+  <div class="logos-wrapper">
+    <div class="logo-card">
+      <img src="images/kaishi-nihon-logo.png" alt="Kaishi Nihon" />
+      <span>Kaishi Nihon</span>
+    </div>
+    <div class="logo-card">
+      <img src="images/kaishi-innovations-logo.png" alt="Kaishi Innovations" />
+      <span>Kaishi Innovations</span>
+    </div>
+    <div class="logo-card">
+      <img src="images/ceylosa-logo.png" alt="Ceylosa" />
+      <span>Ceylosa</span>
+    </div>
+    <div class="logo-card">
+      <img src="images/ceylosa-tours-logo.png" alt="Ceylosa Tours" />
+      <span>Ceylosa Tours</span>
+    </div>
+    <div class="logo-card">
+      <img src="images/adami-innovations-logo.png" alt="Adam-i Innovations" />
+      <span>Adam-i Innovations</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- CVScanner Section -->
+<section class="cvscanner-section">
+  <h1>Real Success Stories with CVScanner AI</h1>
+  <div class="cvscanner-cards">
+    <div class="cvscanner-card">
+      <img src="c:\Users\fn0034\OneDrive - フォーラム情報アカデミー専門学校\ドキュメント\Project Niigata\AI based resumer\images\3a577e23da9bf4416b77ba50ebce0e0c.jpg" alt="Sarah's CV success" />
+      <h2>Sarah Landed Interviews Faster by Using CVScanner AI's Resume Analysis</h2>
+      <p>Sarah struggled with getting interview calls until she tried CVScanner AI. Within weeks, she optimized her resume and saw results.</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="cvscanner-card">
+      <img src="c:\Users\fn0034\OneDrive - フォーラム情報アカデミー専門学校\ドキュメント\Project Niigata\AI based resumer\images\31610b52042d254bf6b001da99d6b4c7.jpg" alt="James' career breakthrough" />
+      <h2>James Used CVScanner AI to Tailor His Resume and Got His Dream Job</h2>
+      <p>By leveraging CVScanner's personalized suggestions, James transformed his resume and caught the attention of top recruiters.</p>
+      <a href="#">Read more</a>
+    </div>
+    <div class="cvscanner-card">
+      <img src="c:\Users\fn0034\OneDrive - フォーラム情報アカデミー専門学校\ドキュメント\Project Niigata\AI based resumer\images\9ec1fd1659a735a7e59fe1d3ae52568e.jpg" alt="Emily's job search journey" />
+      <h2>Emily Improved Her Resume's ATS Compatibility with CVScanner AI</h2>
+      <p>After several rejections, Emily used CVScanner AI to make her resume ATS-friendly and successfully landed multiple interviews.</p>
+      <a href="#">Read more</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+<!-- CTA Section -->
+<section class="deneb_cta">
+  <div class="container">
+    <div class="cta_wrapper">
+      <div class="row align-items-center">
+        <!-- Text Left -->
+        <div class="col-lg-7 col-md-12">
+          <div class="cta_content">
+            <h3>Ready to Bring Your Vision to Life?</h3>
+            <p>Whether you're starting a new project or need expert support to grow your business, our team is here to help. Let's collaborate and turn your ideas into reality with innovative and reliable solutions.</p>
+          </div>
+        </div>
+
+        <!-- Button Right -->
+        <div class="col-lg-5 col-md-12 text-lg-end text-md-start text-center">
+          <div class="button_box">
+            <a href="#" class="btn btn-hire"><i class="fas fa-briefcase"></i> Hire Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer and CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Want to collaborate? Let's work together.</h2>
+      <a href="#contact" class="btn btn-hire" aria-label="Hire Us">
+        <i class="fas fa-briefcase"></i> Hire Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-container">
+    <!-- About Section -->
+    <div class="footer-column about">
+      <h3>About Us</h3>
+      <p>We are a passionate team dedicated to delivering quality solutions and innovative ideas.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-column contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@example.com">info@cvscannerai.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      <p>Address: 123 Main Street, City, Country</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#about" aria-label="About">About</a></li>
+        <li><a href="#services" aria-label="Services">Services</a></li>
+        <li><a href="#portfolio" aria-label="Portfolio">Portfolio</a></li>
+        <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        <li><a href="#blog" aria-label="Blog">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-column newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe to get the latest updates right in your inbox.</p>
+      <form id="newsletter-form" action="#" method="post" aria-label="Newsletter Subscription Form">
+        <input type="email" name="email" placeholder="Your email address" required aria-required="true" aria-label="Email Address">
+        <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+      </form>
+    </div>
+
+  <!-- Social Media -->
+<div class="footer-column social">
+  <h3>Follow Us</h3>
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a> <!-- fixed here -->
+    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+</div>
+
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Kaishi Nihon (Pvt) Ltd. All rights reserved.</p>
+    <button id="back-to-top" aria-label="Back to top">↑ Top</button>
+  </div>
+</footer>
+
+<!-- Chatbot Widget -->
+<div id="chatbotWidget" aria-label="Kaishi Nihon's AI Assistant Kira" role="region" aria-live="polite">
+  <button id="chatbotToggle" aria-label="Open chat" title="Chat with Kira" style="background:none; border:none; cursor:pointer; width:60px; height:60px;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      width="60"
+      height="60"
+      fill="none"
+      stroke="#0ff"
+      stroke-width="2"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      style="filter: drop-shadow(0 0 8px #0ff); animation: glow 2.5s ease-in-out infinite;"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <!-- Robot head base -->
+      <rect x="12" y="18" width="40" height="28" rx="8" ry="8" fill="#111" stroke="#0ff" />
+      
+      <!-- Eyes -->
+      <circle cx="24" cy="32" r="5" fill="#00ffff" />
+      <circle cx="40" cy="32" r="5" fill="#00ffff" />
+      
+      <!-- Pupils -->
+      <circle cx="24" cy="32" r="2" fill="#004040" />
+      <circle cx="40" cy="32" r="2" fill="#004040" />
+      
+      <!-- Mouth -->
+      <rect x="22" y="44" width="20" height="4" rx="2" ry="2" fill="#00ffff" />
+      
+      <!-- Antennae -->
+      <line x1="20" y1="12" x2="20" y2="6" stroke="#0ff" stroke-width="3" />
+      <circle cx="20" cy="6" r="3" fill="#00ffff" />
+      
+      <line x1="44" y1="12" x2="44" y2="6" stroke="#0ff" stroke-width="3" />
+      <circle cx="44" cy="6" r="3" fill="#00ffff" />
+    </svg>
+  </button>
+
+  <div id="chatbotBox" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <header>
+  <h4>powered by <span class="trademark">Kaishi Nihon™</span></h4>
+  <button id="chatbotClose" aria-label="Close chat">&times;</button>
+</header>
+    <div id="chatbotBody" tabindex="0" aria-live="polite" aria-relevant="additions">
+      <p class="bot-msg">Hello,Konnichiwa! I’m <strong>AHRGE</strong>, your AI assistant from Kaishi Nihon 🤖<br>How can I help you today?</p>
+    </div>
+    <form id="chatForm" aria-label="Chat input form">
+      <input type="text" id="chatInput" aria-label="Type your message" placeholder="Ask me anything..." autocomplete="off" required />
+      <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
+
+
+
+<div id="policy-popup" class="policy-popup">
+  <div class="popup-content">
+    <p>
+      We use cookies and similar technologies to enhance your experience, analyze site traffic, 
+      and serve tailored content. By continuing to use our site, you agree to our 
+      <a href="#">Privacy Policy</a> and <a href="#">Terms & Conditions</a>.
+    </p>
+    <div class="policy-buttons">
+      <button id="accept-policy">Accept</button>
+      <button id="decline-policy">Decline</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="scriptscvscanner.js"></script>
+</body>
+</html>
+
